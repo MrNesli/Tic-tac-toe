@@ -14,8 +14,8 @@ let CIRCLE_COLOR = "red";
 let CROSS_COLOR = "blue";
 
 let winMessage = document.querySelector('.win-message');
-let player1Score = document.querySelector('.player1-score');
-let player2Score = document.querySelector('.player2-score');
+let player1Score = document.getElementById('player1-score');
+let player2Score = document.getElementById('player2-score');
 let restartButton = document.getElementById('restart-button');
 let whoseTurnInfo = document.querySelector('.whose-turn');
 
@@ -48,8 +48,13 @@ function restartButtonClick() {
 
 function initTextFields() {
     updateWhoseTurnTextField();
+
     player1Score.textContent = `Player ${Game.PLAYERS.player1.ID} Score: ${Game.PLAYERS.player1.SCORE}`;
+    player1Score.style.color = Game.PLAYERS.player1.SIGN == 'o' ? CIRCLE_COLOR : CROSS_COLOR;
+
     player2Score.textContent = `Player ${Game.PLAYERS.player2.ID} Score: ${Game.PLAYERS.player2.SCORE}`;
+    player2Score.style.color = Game.PLAYERS.player2.SIGN == 'o' ? CIRCLE_COLOR : CROSS_COLOR;
+
     restartButton.addEventListener("click", restartButtonClick);
     restartButton.disabled = false;
 }

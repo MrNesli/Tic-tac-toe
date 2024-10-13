@@ -33,13 +33,11 @@ p {
     display: flex;
     justify-content: space-between;
 
-    
-
-    .player1-score {
+    #player1-score {
         color: red;
     }
 
-    .player2-score {
+    #player2-score {
         color: blue;
     }
 }
